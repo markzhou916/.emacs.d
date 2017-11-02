@@ -12,6 +12,7 @@
     (setq-default company-backends '((company-capf company-dabbrev-code) company-dabbrev)
                   company-dabbrev-other-buffers 'all
                   company-tooltip-align-annotations t))
+
   (global-set-key (kbd "M-C-/") 'company-complete)
   (when (maybe-require-package 'company-quickhelp)
     (add-hook 'after-init-hook 'company-quickhelp-mode))
@@ -20,7 +21,6 @@
     "Add BACKEND to a buffer-local version of `company-backends'."
     (set (make-local-variable 'company-backends)
          (append (list backend) company-backends))))
-
 
 ;; Suspend page-break-lines-mode while company menu is active
 ;; (see https://github.com/company-mode/company-mode/issues/416)
@@ -40,7 +40,6 @@
     (add-hook 'company-completion-started-hook 'sanityinc/page-break-lines-disable)
     (add-hook 'company-completion-finished-hook 'sanityinc/page-break-lines-maybe-reenable)
     (add-hook 'company-completion-cancelled-hook 'sanityinc/page-break-lines-maybe-reenable)))
-
 
 
 (provide 'init-company)

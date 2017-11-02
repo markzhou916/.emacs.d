@@ -31,6 +31,7 @@
 (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
 (require 'init-elpa) 
 (require 'init-exec-path)
+(require 'init-frame-hooks)
 
 ;;--------------------------------------------------------------------------
 ;; Load configs for specific feature and modes
@@ -57,8 +58,27 @@
 ;;--------------------------------------------------------------------------
 ;; Load configs for specific feature and modes
 ;;--------------------------------------------------------------------------
+;;mouse wheel
+(require 'init-xterm)
 
 ;; Auto expand
 (require 'init-hippie-expand)
+(require 'init-company)
+(require 'init-yasnippet)
 
+;; Org Mode
+(require 'init-org)
+
+;;ibuffer
+(require 'init-ibuffer)
+
+;;smex
+(require 'init-smex)
+
+;; Languages
+(require 'init-python-mode)
+
+
+;;My work command
+(require 'init-mark)
 (provide 'init)
